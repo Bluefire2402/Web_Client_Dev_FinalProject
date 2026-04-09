@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"
     <title>Mabel Music Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,7 +13,7 @@
     </div>
     
     <header>
-        <nav class="Navbar">
+        <nav class="navbar">
             <h1>Mabel Music Store</h1>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
@@ -22,7 +23,7 @@
                 <li><a href="Login.html">Login</a></li>
                 <li><a href="Register.html">Register</a></li>
                 <li><a href="Profile.html">Profile</a></li>
-                <li><a href="Cart.html">Profile</a></li>
+                <li><a href="Cart.html">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -34,6 +35,32 @@
             <button>Shop Now</button>
         </a>
     </section>
+    <section class="products">
+        <h2>Featured Products</h2>
+        <div class="Product-container">
+            <div class="product">
+                <h2>New Schecter models</h2>
+                <p>from 300$</p>
+                <a href="Products.html">Go to product</a>
+            </div>
+            <div class="product">
+                <h2>New Pearl DrumKits </h2>
+                <p>from 400$</p>
+                <a href="Product.html">Go to product</a>
+            </div>
+            <div class="product">
+                <h2>Brand new Yamaha Models</h2>
+                <p>from 250$</p>
+                <a href="Product.html">Go to product</a>
+            </div>
+            <div class="product">
+                <h2>Fender Basses</h2>
+                <p>Just at 300$</p>
+                <a href="Product.html">Go to product</a>
+            </div>
+        </div>  
+
+    </section>
     <section class="categories_bar">
         <a href="Products.html">Guitars</a>
         <a href="Products.html">Drums</a>
@@ -41,8 +68,20 @@
         <a href="Products.html">Studio</a>
         <a href="Products.html">Accessories</a>
     </section>
+    <section class="filter">
+    <button onclick="filterProducts('all')">All</button>
+    <button onclick="filterProducts('guitar')">Guitars</button>
+    <button onclick="filterProducts('drums')">Drumkits</button>
+
+    <div class="items">
+        <div class="item guitar">Schecter Guitar</div>
+        <div class="item drums">Pearl Drum Kit</div>
+        <div class="item guitar">Fender Bass</div>
+    </div>
+</section>
+<script src="Code.JS"></script>
 <footer>
-    <p>© 2026 Mabel Music Store</p>
+    <p>@ 2026 Mabel Music Store</p>
     <p>Email: support@mabelmusic.com</p>
 </footer>
 </body>
