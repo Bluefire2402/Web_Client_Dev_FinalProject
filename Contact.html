@@ -1,36 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            Mabel Music Store - Contact
-        </title>
-        <link rel="stylesheet" href="Styles.CSS">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    </head>
-    <header>
-        <nav class="navbar">
-            <h1>Mabel Music Store</h1>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Login.html">Login</a></li>
-                <li><a href="Register.html">Register</a></li>
-                <li><a href="Profile.html">Profile</a></li>
-                <li><a href="Cart.html">Cart</a></li>
-            </ul>
-        </nav>
-    </header>
-    <body>
-    <h1>Contact Us</h1>
-    <label>Name:</label><br>
-    <input type="text"><br><br>
-    <label>Email:</label><br>
-    <input type="email"><br><br>
-    <label>Message:</label><br>
-    <textarea rows="4" cols="30"></textarea><br><br>
-    <button>Send</button>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Mabel Music Store - Contact</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<nav class="navbar bg-dark px-4">
+        <h1 class="text-white">Mabel Music Store</h1>
+        <ul class="menu d-flex gap-3 list-unstyled m-0">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="Cart.html" >Cart</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Login.html">Login</a></li>
+            <li><a href="Register.html">Register</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+        </ul>
+    </nav>
+
+<div class="container mt-5">
+    <div class="card p-4 shadow">
+        <h2 class="text-center mb-4">Contact Us</h2>
+
+        <form id="contactForm">
+            <div class="mb-3">
+                <label class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Message:</label>
+                <textarea class="form-control" rows="4" id="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Send Message</button>
+        </form>
+        <div id="successMessage" class="alert alert-success mt-3 d-none">
+            The message was sent
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    if (name === "" || email === "" || message === "") {
+        alert("Please. fullfil all the spaces"); return;
+    }
+    document.getElementById("SuccessMessage").classList.remove("d-none");
+    this.reset();
+});
+</script>
+</body>
 </html>

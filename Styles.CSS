@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #f4f4f4;
+}
+
+.topbar {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content:space-between;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121212;
+    padding: 15px 30px;
+}
+
+.navbar h1 {
+    color: white;
+}
+#logo {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.menu li a:hover {
+    color: #e23543;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #212121, #2a2a2a);
+    color: white;
+}
+
+.hero h2 {
+    font-size: 32px;
+}
+
+.hero p {
+    margin-top: 10px;
+}
+
+.hero button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #e63946;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background: #c01722;
+}
+.products {
+    padding: 40px;
+    background: white;
+}
+.products h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.Product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.product {
+    background: white;
+    padding: 60px 80px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+.product img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.product a {
+    display: inline-block;
+    margin-top: 10px;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+.categories_bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    margin-top: 40px;
+}
+.categories_bar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.categories_bar a:hover {
+    color: red;
+}
+.filter {
+    text-align: center;
+    padding: 20px;
+}
+.filter button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.filter button:hover {
+    background: red;
+}
+a {
+    transition: 0.2s;
+}
+a:hover {
+    opacity: 0.7;
+}
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+}
