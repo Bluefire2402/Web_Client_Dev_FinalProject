@@ -53,12 +53,10 @@ function displayCart() {
 
                 <label>Quantity:</label>
                 <input type="number" value="${item.quantity}" min="1"
-                    onchange="updateQuantity(${index}, this.value)">
-
+                 onchange="updateQuantity(${index}, this.value)">
                 <p>Total: $${itemTotal}</p>
-
                 <button class="btn btn-danger"
-                    onclick="removeItem(${index})">Remove</button>
+                onclick="removeItem(${index})">Remove</button>
             </div>
         `;
     });

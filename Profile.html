@@ -57,23 +57,22 @@ function displayProfile() {
     document.getElementById("name").value = user.name || "";
     document.getElementById("email").value = user.email;
 }
-
 function updateProfile() {
     const newName = document.getElementById("name").value.trim();
     const newEmail = document.getElementById("email").value.trim();
     if (!newEmail) {
-        alert("Email cannot be empty!");
+        alert("Email cannot be empty");
         return;
     }
     user.name = newName;
     user.email = newEmail;
     localStorage.setItem("user", JSON.stringify(user));
-    alert("Profile updated!");
+    alert("Profile updated");
     displayProfile();
 }
 function logout() {
     localStorage.removeItem("user");
-    alert("Logged out!");
+    alert("Logged out");
     window.location.href = "login.html";
 }
 displayProfile();
