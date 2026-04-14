@@ -1,6 +1,7 @@
-let user = JSON.parse(localStorage.getItem("user"));
+let user = JSON.parse(localStorage.getItem("currentUser"));
 const profileDiv = document.getElementById("profile-info");
 function displayProfile() {
+    user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
         profileDiv.innerHTML = "<p>No users are logged.</p>";
         return;
@@ -13,6 +14,7 @@ function displayProfile() {
     document.getElementById("email").value = user.email;
 }
 function updateProfile() {
+    let user = JSON.parse(localStorage.getItem("currentUser"));
     const newName = document.getElementById("name").value.trim();
     const newEmail = document.getElementById("email").value.trim();
     if (!newEmail) {
@@ -21,12 +23,13 @@ function updateProfile() {
     }
     user.name = newName;
     user.email = newEmail;
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("currentUser", JSON.stringify(user));
+    localStorage.setItem("registeredUser", JSON.stringify(user));
     alert("Profile updated");
     displayProfile();
 }
 function logout() {
-    localStorage.removeItem("user");
+    localStorage.removeItem("currentUser");
     alert("Logged out");
     window.location.href = "login.html";
 }

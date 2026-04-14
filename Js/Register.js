@@ -16,7 +16,7 @@ function register() {
         email: email,
         password: password
     };
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("registeredUser", JSON.stringify(user));
     alert("Registration successful");
     window.location.href = "login.html";
 }

@@ -5,13 +5,16 @@ function login() {
         alert("Please fill all fields");
         return;
     }
-    const user = {
-        Email: Email
-    };
-    localStorage.setItem("user", JSON.stringify(user));
-    alert("Login successful");
-    window.location.href = "index.html";
-}
-function Darkmode() {
-    document.body.classList.toggle("dark-mode")
+    const savedUser = JSON.parse(localStorage.getItem("registeredUser"));
+    if (!savedUser) {
+        alert("No user registered");
+        return;
     }
+    if (email === savedUser.email && password === savedUser.password) {
+        localStorage.setItem("currentUser", JSON.stringify(savedUser));
+        alert("Login successful");
+        window.location.href = "index.html";
+    } else {
+        alert("Invalid email or password");
+    }
+}
