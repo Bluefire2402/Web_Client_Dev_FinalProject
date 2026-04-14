@@ -11,14 +11,18 @@
 <header>
     <nav class="navbar bg-dark px-4">
         <a class="navbar-brand d-flex align-items-center logo-text" href="index.html">
-        <img src="Logo.jpg" alt="Logo" class="logo-img me-2"> Mabel Music Store</a>
+        <img src="images/Logo.jpg" alt="Logo" class="logo-img me-2"> Mabel Music Store</a>
         <ul class="menu d-flex gap-3 list-unstyled m-0">
+            <button onclick="Darkmode()" class="btn btn-secondary">
+            Dark Mode
+            </button>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="Cart.html" >Cart</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="Login.html">Login</a></li>
+            <li><a href="Checkout.html">Checkout</a></li>
             <li><a href="Register.html">Register</a></li>
             <li><a href="Profile.html">Profile</a></li>
         </ul>
@@ -37,7 +41,6 @@
         <option value="">Select</option>
         <option>Credit Card</option>
         <option>Debit Card</option>
-        <option>PayPal</option>
     </select>
     <h3>Order Summary</h3>
     <div id="summary"></div>
@@ -45,46 +48,7 @@
     <button class="btn btn-success mt-3" onclick="placeOrder()">Place Order</button>
 </div>
 
-<script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-const summaryDiv = document.getElementById("summary");
-const totalDiv = document.getElementById("total");
-function displaySummary() {
-    let total = 0;
-    summaryDiv.innerHTML = "";
-    if (cart.length === 0) {
-        summaryDiv.innerHTML = "<p>Your cart is empty.</p>";
-        totalDiv.textContent = "$0";
-        return;
-    } 
-    cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
-        summaryDiv.innerHTML += `
-            <p>${item.name} (x${item.quantity}) - $${itemTotal}</p>
-        `;
-    });
-    totalDiv.textContent = "$" + total;
-}
-function placeOrder() {
-    const name = document.getElementById("name").value.trim();
-    const address = document.getElementById("address").value.trim();
-    const payment = document.getElementById("payment").value;
-    if (!name || !address || !payment) {
-        alert("Please fill all fields");
-        return;
-    }
-    if (cart.length === 0) {
-        alert("The cart is empty");
-        return;
-    }
-    alert("Order placed successfully!");
-    localStorage.removeItem("cart");
-    window.location.href = "index.html";
-}
-displaySummary();
-</script>
+<script src="Js/checkout.js"></script>
 </body>
 <footer class="bg-dark text-white mt-5 py-4">
   <div class="container">

@@ -11,14 +11,18 @@
 <header>
     <nav class="navbar bg-dark px-4">
         <a class="navbar-brand d-flex align-items-center logo-text" href="index.html">
-        <img src="Logo.jpg" alt="Logo" class="logo-img me-2"> Mabel Music Store</a>
+        <img src="images/Logo.jpg" alt="Logo" class="logo-img me-2"> Mabel Music Store</a>
         <ul class="menu d-flex gap-3 list-unstyled m-0">
+            <button onclick="Darkmode()" class="btn btn-secondary">
+            Dark Mode
+            </button>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="Cart.html" >Cart</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="Login.html">Login</a></li>
+            <li><a href="Checkout.html">Checkout</a></li>
             <li><a href="Register.html">Register</a></li>
             <li><a href="Profile.html">Profile</a></li>
         </ul>
@@ -30,51 +34,7 @@
 
     <h3 class="mt-4">Total: <span id="total"></span></h3>
 </div>
-<script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-const cartDiv = document.getElementById("cart");
-const totalDiv = document.getElementById("total");
-function displayCart() {
-    cartDiv.innerHTML = "";
-    let total = 0;
-    if (cart.length === 0) {
-        cartDiv.innerHTML = "<p>Your cart is empty.</p>";
-        totalDiv.textContent = "$0";
-        return;
-    }
-    cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
-        cartDiv.innerHTML += `
-            <div class="card p-3 mb-3">
-                <h4>${item.name}</h4>
-                <p>Price: $${item.price}</p>
-
-                <label>Quantity:</label>
-                <input type="number" value="${item.quantity}" min="1"
-                 onchange="updateQuantity(${index}, this.value)">
-                <p>Total: $${itemTotal}</p>
-                <button class="btn btn-danger"
-                onclick="removeItem(${index})">Remove</button>
-            </div>
-        `;
-    });
-    totalDiv.textContent = "$" + total;
-}
-function removeItem(index) {
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    displayCart();
-}
-
-function updateQuantity(index, newQuantity) {
-    cart[index].quantity = parseInt(newQuantity);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    displayCart();
-}
-displayCart();
-</script>
+<script src="Js/Cart.js"></script>
 <footer class="bg-dark text-white mt-5 py-4">
   <div class="container">
     <div class="row align-items-center">

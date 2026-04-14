@@ -11,7 +11,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     color: #3E2723;
-    background-image: url("Wood.jpg");
+    background-image: url("images/Wood.jpg");
 }
 h1, h2, h3, .navbar-brand {
   font-family: 'Cinzel', serif;
@@ -206,6 +206,7 @@ footer {
 .dark-mode {
   background-color: #121212;
   color: white;
+  background-image: none;
 }
 .dark-mode .card {
   background-color: #1e1e1e;

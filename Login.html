@@ -11,14 +11,18 @@
 <header>
     <nav class="navbar bg-dark px-4">
         <a class="navbar-brand d-flex align-items-center logo-text" href="index.html">
-        <img src="Logo.jpg" alt="Logo" class="logo-img me-2"> Mabel Music Store</a>
+        <img src="images/Logo.jpg" alt="Logo" class="logo-img me-2"> Mabel Music Store</a>
         <ul class="menu d-flex gap-3 list-unstyled m-0">
+            <button onclick="Darkmode()" class="btn btn-secondary">
+            Dark Mode
+            </button>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Shop</a></li>
             <li><a href="Cart.html" >Cart</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="Login.html">Login</a></li>
+            <li><a href="Checkout.html">Checkout</a></li>
             <li><a href="Register.html">Register</a></li>
             <li><a href="Profile.html">Profile</a></li>
         </ul>
@@ -32,23 +36,7 @@
     <input type="password" id="password" class="form-control mb-3">
     <button class="btn btn-primary" onclick="login()">Login</button>
 </div>
-
-<script>
-function login() {
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    if (!email || !password) {
-        alert("Please fill all fields");
-        return;
-    }
-    const user = {
-        Email: Email
-    };
-    localStorage.setItem("user", JSON.stringify(user));
-    alert("Login successful");
-    window.location.href = "index.html";
-}
-</script>
+<script src="Js/login.js"></script>
 <footer class="bg-dark text-white mt-5 py-4">
   <div class="container">
     <div class="row align-items-center">
